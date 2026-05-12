@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "https://melkorp.github.io/portfolio-site",
+  },
 };
 
 const jsonLd = {
@@ -71,7 +75,8 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="bg-[#0b0f19] text-[#e5e7eb]">
-        <script
+        <Script
+          id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd),

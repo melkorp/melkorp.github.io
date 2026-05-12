@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 
 import SEOFrontend from "@/content/blog/seo-frontend.mdx";
+import type { Metadata } from "next";
+import { posts } from "@/data/blog";
 
-const posts = {
+const postModules = {
   "seo-frontend": SEOFrontend,
 };
 
@@ -13,15 +15,33 @@ type BlogPostPageProps = {
 };
 
 export async function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({
-    slug,
+  return posts.map((post) => ({
+    slug: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const post = posts.find((item) => item.slug === slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+
+    description: post.description,
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
 
-  const Post = posts[slug as keyof typeof posts];
+  const Post = postModules[slug as keyof typeof postModules];
 
   if (!Post) {
     notFound();
