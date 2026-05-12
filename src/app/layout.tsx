@@ -47,6 +47,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://melkorp.github.io/portfolio-site",
+
+    languages: {
+      "ru-RU": "https://melkorp.github.io/portfolio-site",
+
+      "en-US": "https://melkorp.github.io/portfolio-site",
+    },
   },
 };
 
