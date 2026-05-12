@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-# /out/    ← закомментировать или удалить эту строку
+/out/    
 
 # production
 /build
