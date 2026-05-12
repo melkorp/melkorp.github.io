@@ -1,0 +1,40 @@
+import { notFound } from "next/navigation";
+import { projects } from "@/data/projects";
+
+type ProjectPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+
+  if (!project) {
+    notFound();
+  }
+
+  return (
+    <section className="py-24">
+      <div className="container-custom">
+        <div className="max-w-4xl">
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+            Case Study
+          </p>
+          <h1 className="mb-6 text-5xl font-bold">{project.title}</h1>
+          <p className="mb-10 text-xl leading-8 text-zinc-400">
+            {project.description}
+          </p>
+          <article className="prose prose-invert max-w-none">
+            <p className="leading-8 whitespace-pre-line text-zinc-300">
+              {project.content}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}

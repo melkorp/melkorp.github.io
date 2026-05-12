@@ -1,3 +1,5 @@
+import FadeIn from "@/components/ui/fade-in";
+
 const services = [
   {
     title: "SEO-ориентированные сайты",
@@ -38,42 +40,44 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24">
-      <div className="container-custom">
-        <div className="mb-14 max-w-2xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
-            Services
-          </p>
+    <FadeIn>
+      <section id="services" className="py-24">
+        <div className="container-custom">
+          <div className="mb-14 max-w-2xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+              Services
+            </p>
 
-          <h2 className="mb-4 text-4xl font-bold">
-            Разработка современных SEO-ориентированных сайтов
-          </h2>
+            <h2 className="mb-4 text-4xl font-bold">
+              Разработка современных SEO-ориентированных сайтов
+            </h2>
 
-          <p className="text-zinc-400">
-            Архитектура, frontend-разработка, техническая SEO-оптимизация и
-            адаптивный интерфейс.
-          </p>
+            <p className="text-zinc-400">
+              Архитектура, frontend-разработка, техническая SEO-оптимизация и
+              адаптивный интерфейс.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:border-zinc-700"
+              >
+                <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
+
+                <p className="mb-5 leading-7 text-zinc-400">
+                  {service.description}
+                </p>
+
+                <p className="text-secondary-language text-sm text-zinc-500">
+                  {service.secondary}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <article
-              key={service.title}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:border-zinc-700"
-            >
-              <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
-
-              <p className="mb-5 leading-7 text-zinc-400">
-                {service.description}
-              </p>
-
-              <p className="text-secondary-language text-sm text-zinc-500">
-                {service.secondary}
-              </p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </FadeIn>
   );
 }

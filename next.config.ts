@@ -1,7 +1,25 @@
 import type { NextConfig } from "next";
 
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
+
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+
+  images: {
+    unoptimized: true,
+  },
+
+  basePath: isProd ? "/portfolio-site" : "",
+
+  assetPrefix: isProd ? "/portfolio-site/" : "",
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

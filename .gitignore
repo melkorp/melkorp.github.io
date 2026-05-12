@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/    ← закомментировать или удалить эту строку
 
 # production
 /build
@@ -39,4 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-пше

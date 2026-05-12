@@ -3,11 +3,13 @@ import Link from "next/link";
 import ServicesSection from "@/components/sections/services-section";
 import PortfolioSection from "@/components/sections/portfolio-section";
 import ContactSection from "@/components/sections/contact-section";
+import CTASection from "@/components/sections/cta-section";
 
 export default function Home() {
   return (
     <>
-      <section className="py-24">
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
         <div className="container-custom">
           <div className="max-w-4xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
@@ -32,15 +34,15 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/portfolio"
-                className="rounded-xl bg-blue-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-blue-400"
+                href="#portfolio"
+                className="rounded-xl bg-blue-500 px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.02] hover:bg-blue-400 active:scale-[0.98]"
               >
                 Портфолио
               </Link>
 
               <Link
-                href="/contacts"
-                className="rounded-xl border border-zinc-700 px-6 py-3 text-sm font-medium transition hover:border-zinc-500"
+                href="#contacts"
+                className="rounded-xl border border-zinc-700 px-6 py-3 text-sm font-medium transition hover:scale-[1.02] hover:border-zinc-500 active:scale-[0.98]"
               >
                 Контакты
               </Link>
@@ -52,6 +54,8 @@ export default function Home() {
       <ServicesSection />
 
       <PortfolioSection />
+
+      <CTASection />
 
       <ContactSection />
     </>

@@ -23,13 +23,18 @@ export const metadata: Metadata = {
     "typescript",
   ],
 
-  metadataBase: new URL("https://melkorp.github.io"),
+  verification: {
+    google: "9guNaiNc7jeb4jdK2Oki0J59B5Yqc5CC2F15flhxgLM",
+    yandex: "b87e2b2622c5d4d0",
+  },
+
+  metadataBase: new URL("https://melkorp.github.io/portfolio-site"),
 
   openGraph: {
     title: "Melkorp",
     description:
       "Разработка SEO-ориентированных сайтов с современной frontend-архитектурой.",
-    url: "https://melkorp.github.io",
+    url: "https://melkorp.github.io/portfolio-site",
     siteName: "Melkorp",
     locale: "ru_RU",
     type: "website",
@@ -41,14 +46,38 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Melkorp",
+  url: "https://melkorp.github.io/portfolio-site",
+  jobTitle: "Frontend Developer",
+  description: "Разработка SEO-ориентированных сайтов и frontend-интерфейсов.",
+  sameAs: ["https://github.com/melkorp"],
+  knowsAbout: [
+    "Next.js",
+    "TypeScript",
+    "Frontend Development",
+    "Technical SEO",
+    "Responsive Design",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
-      <body>
+    <html lang="ru" suppressHydrationWarning data-scroll-behavior="smooth">
+      <body className="bg-[#0b0f19] text-[#e5e7eb]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+
         <Navbar />
 
         <main>{children}</main>
