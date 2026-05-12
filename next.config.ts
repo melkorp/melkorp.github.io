@@ -4,6 +4,19 @@ import createMDX from "@next/mdx";
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
+
+  options: {
+    rehypePlugins: [
+      [
+        "rehype-pretty-code",
+        {
+          theme: "github-dark",
+
+          keepBackground: false,
+        },
+      ],
+    ],
+  },
 });
 
 const isProd = process.env.NODE_ENV === "production";
