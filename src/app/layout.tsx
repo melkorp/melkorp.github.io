@@ -2,7 +2,10 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -79,7 +82,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang="ru"
+      className={inter.className}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
+      <head>
+        <link rel="preload" as="image" href="/images/hero.png" />
+      </head>
       <body className="bg-[#0b0f19] text-[#e5e7eb]">
         <Script
           id="json-ld"
