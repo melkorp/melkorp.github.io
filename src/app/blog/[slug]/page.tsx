@@ -41,19 +41,39 @@ export async function generateMetadata({
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
 
+  const post = posts.find((item) => item.slug === slug);
   const Post = postModules[slug as keyof typeof postModules];
 
-  if (!Post) {
+  if (!Post || !post) {
     notFound();
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    author: {
+      "@type": "Person",
+      name: "Melkorp",
+    },
+  };
+
   return (
-    <section className="py-24">
-      <div className="container-custom">
-        <article className="prose prose-invert max-w-4xl">
-          <Post />
-        </article>
-      </div>
-    </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+      <section className="py-24">
+        <div className="container-custom">
+          <article className="prose prose-invert max-w-4xl">
+            <Post />
+          </article>
+        </div>
+      </section>
+    </>
   );
 }

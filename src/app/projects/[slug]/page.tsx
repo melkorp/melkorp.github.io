@@ -36,24 +36,43 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    author: {
+      "@type": "Person",
+      name: "Melkorp",
+    },
+  };
+
   return (
-    <section className="py-24">
-      <div className="container-custom">
-        <div className="max-w-4xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
-            Case Study
-          </p>
-          <h1 className="mb-6 text-5xl font-bold">{project.title}</h1>
-          <p className="mb-10 text-xl leading-8 text-zinc-400">
-            {project.description}
-          </p>
-          <article className="prose prose-invert max-w-none">
-            <p className="leading-8 whitespace-pre-line text-zinc-300">
-              {project.content}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectSchema),
+        }}
+      />
+      <section className="py-24">
+        <div className="container-custom">
+          <div className="max-w-4xl">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+              Case Study
             </p>
-          </article>
+            <h1 className="mb-6 text-5xl font-bold">{project.title}</h1>
+            <p className="mb-10 text-xl leading-8 text-zinc-400">
+              {project.description}
+            </p>
+            <article className="prose prose-invert max-w-none">
+              <p className="leading-8 whitespace-pre-line text-zinc-300">
+                {project.content}
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
