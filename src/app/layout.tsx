@@ -88,9 +88,6 @@ export default function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <head>
-        <link rel="preload" as="image" href="/images/hero.png" />
-      </head>
       <body className="bg-[#0b0f19] text-[#e5e7eb]">
         <Script
           id="json-ld"
