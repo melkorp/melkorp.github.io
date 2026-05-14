@@ -34,6 +34,10 @@ export const metadata: Metadata = {
 
   metadataBase: new URL("https://melkorp.github.io/portfolio-site"),
 
+  icons: {
+    icon: "/images/icon.png",
+  },
+
   openGraph: {
     title: "Melkorp",
     description:
@@ -42,6 +46,13 @@ export const metadata: Metadata = {
     siteName: "Melkorp",
     locale: "ru_RU",
     type: "website",
+    images: [
+      {
+        url: "/images/opengraph-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 
   robots: {

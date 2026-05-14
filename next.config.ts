@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
-
 import createMDX from "@next/mdx";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -29,6 +33,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
   async headers() {
     return [
       {
@@ -56,9 +61,10 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
   basePath: isProd ? "/portfolio-site" : "",
 
   assetPrefix: isProd ? "/portfolio-site/" : "",
 };
 
-export default withMDX(nextConfig);
+export default withBundleAnalyzer(withMDX(nextConfig));
