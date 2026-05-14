@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       />
       <section className="py-24">
         <div className="container-custom">
-          <article className="prose prose-invert max-w-4xl">
+          <article className="prose prose-invert max-w-3xl">
             <Post />
           </article>
         </div>

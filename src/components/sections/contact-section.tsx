@@ -11,7 +11,7 @@ export default function ContactSection() {
                 Contacts
               </p>
 
-              <h2 className="mb-6 text-4xl font-bold leading-tight">
+              <h2 className="mb-6 text-3xl md:text-5xl font-bold tracking-tight">
                 Связь для сотрудничества и frontend-разработки
               </h2>
 
@@ -20,12 +20,12 @@ export default function ContactSection() {
                 современных frontend-проектов.
               </p>
 
-              <p className="text-secondary-language mb-10 text-sm text-zinc-500">
+              <p className="text-sm text-zinc-500 mb-10">
                 Open for collaboration, frontend projects and SEO-oriented web
                 development.
               </p>
 
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-6">
                 <div>
                   <p className="mb-2 text-sm uppercase tracking-[0.2em] text-zinc-500">
                     Email

@@ -36,10 +36,10 @@ export default function ServicesSection() {
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
               Services
             </p>
-            <h2 className="mb-4 text-4xl font-bold">
+            <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
               Разработка современных SEO-ориентированных сайтов
             </h2>
-            <p className="text-zinc-400">
+            <p className="max-w-2xl text-lg leading-8 text-zinc-400">
               Архитектура, frontend-разработка, техническая SEO-оптимизация и
               адаптивный интерфейс.
             </p>
@@ -51,12 +51,10 @@ export default function ServicesSection() {
             <FadeIn key={service.title} delay={index * 0.1}>
               <article className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
                 <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
-                <p className="mb-5 leading-7 text-zinc-400">
+                <p className="mb-5 text-base leading-8 text-zinc-300">
                   {service.description}
                 </p>
-                <p className="text-secondary-language text-sm text-zinc-500">
-                  {service.secondary}
-                </p>
+                <p className="text-sm text-zinc-500">{service.secondary}</p>
               </article>
             </FadeIn>
           ))}

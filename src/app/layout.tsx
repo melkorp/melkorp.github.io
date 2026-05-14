@@ -100,7 +100,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="text-[#e5e7eb]">
-        <div className="relative min-h-screen overflow-hidden bg-black">
+        <div className="relative min-h-screen overflow-hidden bg-black antialiased">
           {/* Grid overlay */}
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.06]" />
           {/* Radial glow */}

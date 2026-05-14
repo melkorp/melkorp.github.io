@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative z-10 overflow-hidden py-24">
+      <section className="relative z-10 overflow-hidden py-24 md:py-32">
         {/* Градиент hero теперь будет поверх глобальной сетки, 
             но под контентом. Оставляем как есть, он добавляет 
             локальный акцент */}
@@ -24,7 +24,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <HeroTitle className="mb-6 text-4xl md:text-6xl font-bold leading-tight">
+              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl">
                 Разработка SEO-ориентированных сайтов с современной
                 frontend-архитектурой и высокой производительностью.
               </HeroTitle>
@@ -39,7 +39,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <p className="text-secondary-language mb-10 text-sm text-zinc-500">
+              <p className="text-sm text-zinc-500 mb-10">
                 SEO-focused frontend development, responsive architecture and
                 technical optimization.
               </p>

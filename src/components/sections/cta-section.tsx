@@ -11,7 +11,7 @@ export default function CTASection() {
               <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
                 Collaboration
               </p>
-              <h2 className="mb-6 text-4xl font-bold leading-tight">
+              <h2 className="mb-6 text-3xl md:text-5xl font-bold tracking-tight">
                 Разработка современных SEO-ориентированных сайтов и
                 frontend-проектов
               </h2>
@@ -19,7 +19,7 @@ export default function CTASection() {
                 Открыт для сотрудничества, frontend-разработки и создания
                 производительных web-интерфейсов.
               </p>
-              <p className="text-secondary-language mb-10 text-sm text-zinc-500">
+              <p className="text-sm text-zinc-500 mb-10">
                 Open for frontend development, SEO-oriented websites and modern
                 web interfaces.
               </p>

@@ -46,10 +46,10 @@ export default function PortfolioSection() {
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
               Portfolio
             </p>
-            <h2 className="mb-4 text-4xl font-bold">
+            <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
               Проекты и frontend-разработка
             </h2>
-            <p className="text-zinc-400">
+            <p className="max-w-2xl text-lg leading-8 text-zinc-400">
               Текущие разработки, архитектурные концепции и SEO-ориентированные
               интерфейсы.
             </p>
@@ -68,18 +68,20 @@ export default function PortfolioSection() {
 
                 <h3 className="mb-4 text-2xl font-semibold">{project.title}</h3>
 
-                <div className="mb-6 space-y-4">
+                <div className="mb-6 space-y-6">
                   <div>
                     <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
                       Задача
                     </p>
-                    <p className="leading-7 text-zinc-300">{project.problem}</p>
+                    <p className="text-base leading-8 text-zinc-300">
+                      {project.problem}
+                    </p>
                   </div>
                   <div>
                     <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
                       Решение
                     </p>
-                    <p className="leading-7 text-zinc-300">
+                    <p className="text-base leading-8 text-zinc-300">
                       {project.solution}
                     </p>
                   </div>
@@ -87,7 +89,9 @@ export default function PortfolioSection() {
                     <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
                       Результат
                     </p>
-                    <p className="leading-7 text-zinc-300">{project.result}</p>
+                    <p className="text-base leading-8 text-zinc-300">
+                      {project.result}
+                    </p>
                   </div>
                 </div>
 
@@ -95,9 +99,7 @@ export default function PortfolioSection() {
                   {project.stack}
                 </div>
 
-                <p className="text-secondary-language text-sm text-zinc-500">
-                  {project.secondary}
-                </p>
+                <p className="text-sm text-zinc-500">{project.secondary}</p>
 
                 <a
                   href={`/portfolio-site/projects/${project.slug}`}

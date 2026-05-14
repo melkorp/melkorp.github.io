@@ -57,11 +57,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       />
       <section className="py-24">
         <div className="container-custom">
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
               Case Study
             </p>
-            <h1 className="mb-6 text-5xl font-bold">{project.title}</h1>
+            <h1 className="mb-6 text-5xl md:text-7xl font-black tracking-tight leading-[0.95]">
+              {project.title}
+            </h1>
             <p className="mb-10 text-xl leading-8 text-zinc-400">
               {project.description}
             </p>
