@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://melkorp.github.io/portfolio-site"),
 
   icons: {
-    icon: "/images/icon.png",
+    icon: "/portfolio-site/images/icon.png",
   },
 
   openGraph: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/opengraph-image.png",
+        url: "/portfolio-site/images/opengraph-image.png",
         width: 1200,
         height: 630,
       },
@@ -99,20 +99,36 @@ export default function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body className="bg-[#0b0f19] text-[#e5e7eb]">
-        <Script
-          id="json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+      <body className="text-[#e5e7eb]">
+        <div className="relative min-h-screen overflow-hidden bg-black">
+          {/* Grid overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.06]" />
+          {/* Radial glow */}
+          <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+          {/* Noise texture (CSS) */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-soft-light"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
+              backgroundRepeat: "repeat",
+              backgroundSize: "200px 200px",
+            }}
+          />
 
-        <Navbar />
+          <Script
+            id="json-ld"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd),
+            }}
+          />
 
-        <main>{children}</main>
+          <Navbar />
 
-        <Footer />
+          <main>{children}</main>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

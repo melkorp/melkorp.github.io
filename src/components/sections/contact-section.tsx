@@ -3,9 +3,9 @@ import FadeIn from "@/components/motion/fade-in";
 export default function ContactSection() {
   return (
     <FadeIn>
-      <section id="contacts" className="py-24">
+      <section id="contacts" className="relative z-10 py-24">
         <div className="container-custom">
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10 md:p-16">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-10 md:p-16 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
                 Contacts

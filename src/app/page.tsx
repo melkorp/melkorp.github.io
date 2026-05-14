@@ -9,7 +9,11 @@ import CTASection from "@/components/sections/cta-section";
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden py-24">
+      {/* HERO SECTION */}
+      <section className="relative z-10 overflow-hidden py-24">
+        {/* Градиент hero теперь будет поверх глобальной сетки, 
+            но под контентом. Оставляем как есть, он добавляет 
+            локальный акцент */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
         <div className="container-custom">
           <div className="max-w-4xl">
@@ -62,21 +66,10 @@ export default function Home() {
         </div>
       </section>
 
-      <FadeIn>
-        <ServicesSection />
-      </FadeIn>
-
-      <FadeIn>
-        <PortfolioSection />
-      </FadeIn>
-
-      <FadeIn>
-        <CTASection />
-      </FadeIn>
-
-      <FadeIn>
-        <ContactSection />
-      </FadeIn>
+      <ServicesSection />
+      <PortfolioSection />
+      <CTASection />
+      <ContactSection />
     </>
   );
 }

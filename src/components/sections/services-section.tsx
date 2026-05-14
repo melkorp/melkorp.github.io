@@ -29,9 +29,8 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="relative z-10 py-24">
       <div className="container-custom">
-        {/* Заголовок и описание – появляются плавно */}
         <FadeIn>
           <div className="mb-14 max-w-2xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
@@ -47,11 +46,10 @@ export default function ServicesSection() {
           </div>
         </FadeIn>
 
-        {/* Карточки услуг – каждая в своём FadeIn с задержкой и hover-эффектом */}
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 0.1}>
-              <article className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500">
+              <article className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
                 <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
                 <p className="mb-5 leading-7 text-zinc-400">
                   {service.description}
