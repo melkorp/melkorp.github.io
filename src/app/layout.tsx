@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
-import Script from "next/script";
+import { personSchema, websiteSchema } from "@/lib/structured-data";
 import { Inter } from "next/font/google";
 import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
@@ -29,23 +29,6 @@ export const metadata: Metadata = {
       "en-US": "https://melkorp.github.io/portfolio-site",
     },
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Melkorp",
-  url: "https://melkorp.github.io/portfolio-site",
-  jobTitle: "Frontend Developer",
-  description: "Разработка SEO-ориентированных сайтов и frontend-интерфейсов.",
-  sameAs: ["https://github.com/melkorp"],
-  knowsAbout: [
-    "Next.js",
-    "TypeScript",
-    "Frontend Development",
-    "Technical SEO",
-    "Responsive Design",
-  ],
 };
 
 export default function RootLayout({
@@ -76,11 +59,16 @@ export default function RootLayout({
             }}
           />
 
-          <Script
-            id="json-ld"
+          <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(jsonLd),
+              __html: JSON.stringify(personSchema()),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(websiteSchema()),
             }}
           />
 
