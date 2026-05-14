@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
-
 import SEOFrontend from "@/content/blog/seo-frontend.mdx";
 import type { Metadata } from "next";
 import { posts } from "@/data/blog";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
+import { createMetadata } from "@/lib/metadata";
 
 const postModules = {
   "seo-frontend": SEOFrontend,
@@ -24,23 +26,17 @@ export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-
   const post = posts.find((item) => item.slug === slug);
-
-  if (!post) {
-    return {};
-  }
-
-  return {
+  if (!post) return {};
+  return createMetadata({
     title: post.title,
-
     description: post.description,
-  };
+    path: `/blog/${slug}`,
+  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-
   const post = posts.find((item) => item.slug === slug);
   const Post = postModules[slug as keyof typeof postModules];
 
@@ -56,6 +52,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     author: {
       "@type": "Person",
       name: "Melkorp",
+      url: "https://melkorp.github.io/portfolio-site/",
     },
   };
 
@@ -67,13 +64,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           __html: JSON.stringify(articleSchema),
         }}
       />
-      <section className="py-24">
-        <div className="container-custom">
+      <Section>
+        <Container>
           <article className="prose prose-invert max-w-3xl">
             <Post />
           </article>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 }

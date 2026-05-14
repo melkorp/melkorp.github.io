@@ -3,68 +3,29 @@ import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
+import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Melkorp",
-    template: "%s | Melkorp",
-  },
-
-  description:
-    "Разработка SEO-ориентированных сайтов с современной frontend-архитектурой, высокой скоростью загрузки и адаптивным интерфейсом.",
-
-  keywords: [
-    "seo разработка",
-    "frontend developer",
-    "next.js",
-    "создание сайтов",
-    "seo сайты",
-    "адаптивные сайты",
-    "technical seo",
-    "typescript",
-  ],
-
+  ...createMetadata({ title: "Melkorp" }),
   verification: {
     google: "9guNaiNc7jeb4jdK2Oki0J59B5Yqc5CC2F15flhxgLM",
     yandex: "b87e2b2622c5d4d0",
   },
-
   metadataBase: new URL("https://melkorp.github.io/portfolio-site"),
-
   icons: {
     icon: "/portfolio-site/images/icon.png",
   },
-
-  openGraph: {
-    title: "Melkorp",
-    description:
-      "Разработка SEO-ориентированных сайтов с современной frontend-архитектурой.",
-    url: "https://melkorp.github.io/portfolio-site",
-    siteName: "Melkorp",
-    locale: "ru_RU",
-    type: "website",
-    images: [
-      {
-        url: "/portfolio-site/images/opengraph-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
     canonical: "https://melkorp.github.io/portfolio-site",
-
     languages: {
       "ru-RU": "https://melkorp.github.io/portfolio-site",
-
       "en-US": "https://melkorp.github.io/portfolio-site",
     },
   },

@@ -8,6 +8,9 @@ import ServicesSection from "@/components/sections/services-section";
 import PortfolioSection from "@/components/sections/portfolio-section";
 import ContactSection from "@/components/sections/contact-section";
 import CTASection from "@/components/sections/cta-section";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata({ title: "Главная" });
 
 export default function Home() {
   return (

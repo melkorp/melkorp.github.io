@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
 import { projects } from "@/data/projects";
+import { createMetadata } from "@/lib/metadata";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -14,18 +17,13 @@ export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-
   const project = projects.find((item) => item.slug === slug);
-
-  if (!project) {
-    return {};
-  }
-
-  return {
+  if (!project) return {};
+  return createMetadata({
     title: project.title,
-
     description: project.description,
-  };
+    path: `/projects/${slug}`,
+  });
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -55,26 +53,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           __html: JSON.stringify(projectSchema),
         }}
       />
-      <section className="py-24">
-        <div className="container-custom">
+      <Section>
+        <Container>
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
               Case Study
             </p>
-            <h1 className="mb-6 text-5xl md:text-7xl font-black tracking-tight leading-[0.95]">
+            <h1 className="mb-6 text-5xl md:text-7xl font-black tracking-tight leading-[0.95] text-primary">
               {project.title}
             </h1>
-            <p className="mb-10 text-xl leading-8 text-zinc-400">
+            <p className="mb-10 text-xl leading-8 text-secondary">
               {project.description}
             </p>
             <article className="prose prose-invert max-w-none">
-              <p className="leading-8 whitespace-pre-line text-zinc-300">
+              <p className="leading-8 whitespace-pre-line text-primary">
                 {project.content}
               </p>
             </article>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 }
