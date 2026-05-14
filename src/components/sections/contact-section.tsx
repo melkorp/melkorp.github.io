@@ -1,4 +1,4 @@
-import FadeIn from "@/components/ui/fade-in";
+import FadeIn from "@/components/motion/fade-in";
 
 export default function ContactSection() {
   return (

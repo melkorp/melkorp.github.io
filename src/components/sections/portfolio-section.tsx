@@ -1,4 +1,4 @@
-import FadeIn from "@/components/ui/fade-in";
+import FadeIn from "@/components/motion/fade-in";
 
 const projects = [
   {
@@ -39,9 +39,10 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
-    <FadeIn>
-      <section id="portfolio" className="py-24">
-        <div className="container-custom">
+    <section id="portfolio" className="py-24">
+      <div className="container-custom">
+        {/* Заголовок и описание – появляются плавно */}
+        <FadeIn>
           <div className="mb-14 max-w-2xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
               Portfolio
@@ -54,13 +55,13 @@ export default function PortfolioSection() {
               интерфейсы.
             </p>
           </div>
+        </FadeIn>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 transition hover:-translate-y-1 hover:border-zinc-700 hover:shadow-[0_0_40px_rgba(59,130,246,0.08)]"
-              >
+        {/* Карточки проектов – каждая в своём FadeIn с задержкой и hover-эффектом */}
+        <div className="grid gap-6 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <FadeIn key={project.slug} delay={index * 0.1}>
+              <article className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-[0_0_40px_rgba(59,130,246,0.08)]">
                 <div className="mb-5 flex items-center justify-between">
                   <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
                     {project.status}
@@ -107,10 +108,10 @@ export default function PortfolioSection() {
                   Смотреть case study →
                 </a>
               </article>
-            ))}
-          </div>
+            </FadeIn>
+          ))}
         </div>
-      </section>
-    </FadeIn>
+      </div>
+    </section>
   );
 }

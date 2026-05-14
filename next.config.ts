@@ -28,6 +28,8 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   output: "export",
 
+  trailingSlash: true,
+
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 
   images: {
