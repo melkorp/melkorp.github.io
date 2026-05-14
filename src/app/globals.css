@@ -1,4 +1,27 @@
+@import "../styles/tokens.css";
+
 @import "tailwindcss";
+
+/* Семантические утилиты */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.border-surface {
+  border-color: var(--surface-border);
+}
+
+.bg-accent {
+  background: var(--accent);
+}
 
 :root {
   --background: #0b0f19;

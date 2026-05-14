@@ -43,13 +43,13 @@ export default function PortfolioSection() {
       <div className="container-custom">
         <FadeIn>
           <div className="mb-14 max-w-2xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
               Portfolio
             </p>
             <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
               Проекты и frontend-разработка
             </h2>
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400">
+            <p className="max-w-2xl text-lg leading-8 text-secondary">
               Текущие разработки, архитектурные концепции и SEO-ориентированные
               интерфейсы.
             </p>
@@ -59,9 +59,9 @@ export default function PortfolioSection() {
         <div className="grid gap-6 lg:grid-cols-3">
           {projects.map((project, index) => (
             <FadeIn key={project.slug} delay={index * 0.1}>
-              <article className="group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+              <article className="group rounded-2xl border border-surface bg-surface backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[var(--shadow-soft)]">
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
+                  <span className="rounded-full border border-blue-500/30 bg-accent/10 px-3 py-1 text-xs text-blue-300">
                     {project.status}
                   </span>
                 </div>
@@ -70,40 +70,40 @@ export default function PortfolioSection() {
 
                 <div className="mb-6 space-y-6">
                   <div>
-                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-secondary">
                       Задача
                     </p>
-                    <p className="text-base leading-8 text-zinc-300">
+                    <p className="text-base leading-8 text-primary">
                       {project.problem}
                     </p>
                   </div>
                   <div>
-                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-secondary">
                       Решение
                     </p>
-                    <p className="text-base leading-8 text-zinc-300">
+                    <p className="text-base leading-8 text-primary">
                       {project.solution}
                     </p>
                   </div>
                   <div>
-                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-zinc-500">
+                    <p className="mb-1 text-sm uppercase tracking-[0.2em] text-secondary">
                       Результат
                     </p>
-                    <p className="text-base leading-8 text-zinc-300">
+                    <p className="text-base leading-8 text-primary">
                       {project.result}
                     </p>
                   </div>
                 </div>
 
-                <div className="mb-5 text-sm text-zinc-500">
+                <div className="mb-5 text-sm text-secondary">
                   {project.stack}
                 </div>
 
-                <p className="text-sm text-zinc-500">{project.secondary}</p>
+                <p className="text-sm text-secondary">{project.secondary}</p>
 
                 <a
                   href={`/portfolio-site/projects/${project.slug}`}
-                  className="mt-6 inline-flex text-sm text-blue-400 transition hover:text-blue-300"
+                  className="mt-6 inline-flex text-sm text-[var(--accent)] transition hover:text-blue-300"
                 >
                   Смотреть case study →
                 </a>

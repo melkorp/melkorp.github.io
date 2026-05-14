@@ -33,13 +33,13 @@ export default function ServicesSection() {
       <div className="container-custom">
         <FadeIn>
           <div className="mb-14 max-w-2xl">
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
               Services
             </p>
             <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
               Разработка современных SEO-ориентированных сайтов
             </h2>
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400">
+            <p className="max-w-2xl text-lg leading-8 text-secondary">
               Архитектура, frontend-разработка, техническая SEO-оптимизация и
               адаптивный интерфейс.
             </p>
@@ -49,12 +49,12 @@ export default function ServicesSection() {
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 0.1}>
-              <article className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+              <article className="rounded-2xl border border-surface bg-surface backdrop-blur-xl p-8 ... shadow-[var(--shadow-soft)]">
                 <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
-                <p className="mb-5 text-base leading-8 text-zinc-300">
+                <p className="mb-5 text-base leading-8 text-primary">
                   {service.description}
                 </p>
-                <p className="text-sm text-zinc-500">{service.secondary}</p>
+                <p className="text-sm text-secondary">{service.secondary}</p>
               </article>
             </FadeIn>
           ))}
