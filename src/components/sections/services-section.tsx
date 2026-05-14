@@ -1,4 +1,8 @@
 import FadeIn from "@/components/motion/fade-in";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/heading";
+import Card from "@/components/ui/card";
 
 const services = [
   {
@@ -29,37 +33,34 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="relative z-10 py-24">
-      <div className="container-custom">
+    <Section id="services">
+      <Container>
         <FadeIn>
           <div className="mb-14 max-w-2xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
               Services
             </p>
-            <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
-              Разработка современных SEO-ориентированных сайтов
-            </h2>
-            <p className="max-w-2xl text-lg leading-8 text-secondary">
-              Архитектура, frontend-разработка, техническая SEO-оптимизация и
-              адаптивный интерфейс.
-            </p>
+            <Heading
+              title="Разработка современных SEO-ориентированных сайтов"
+              description="Архитектура, frontend-разработка, техническая SEO-оптимизация и адаптивный интерфейс."
+            />
           </div>
         </FadeIn>
 
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 0.1}>
-              <article className="rounded-2xl border border-surface bg-surface backdrop-blur-xl p-8 ... shadow-[var(--shadow-soft)]">
+              <Card>
                 <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>
                 <p className="mb-5 text-base leading-8 text-primary">
                   {service.description}
                 </p>
                 <p className="text-sm text-secondary">{service.secondary}</p>
-              </article>
+              </Card>
             </FadeIn>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

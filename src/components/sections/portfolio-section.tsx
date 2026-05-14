@@ -1,4 +1,8 @@
 import FadeIn from "@/components/motion/fade-in";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/heading";
+import Card from "@/components/ui/card";
 
 const projects = [
   {
@@ -39,35 +43,30 @@ const projects = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="relative z-10 py-24">
-      <div className="container-custom">
+    <Section id="portfolio">
+      <Container>
         <FadeIn>
           <div className="mb-14 max-w-2xl">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
               Portfolio
             </p>
-            <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight">
-              Проекты и frontend-разработка
-            </h2>
-            <p className="max-w-2xl text-lg leading-8 text-secondary">
-              Текущие разработки, архитектурные концепции и SEO-ориентированные
-              интерфейсы.
-            </p>
+            <Heading
+              title="Проекты и frontend-разработка"
+              description="Текущие разработки, архитектурные концепции и SEO-ориентированные интерфейсы."
+            />
           </div>
         </FadeIn>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {projects.map((project, index) => (
             <FadeIn key={project.slug} delay={index * 0.1}>
-              <article className="group rounded-2xl border border-surface bg-surface backdrop-blur-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[var(--shadow-soft)]">
+              <Card>
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full border border-blue-500/30 bg-accent/10 px-3 py-1 text-xs text-blue-300">
+                  <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
                     {project.status}
                   </span>
                 </div>
-
                 <h3 className="mb-4 text-2xl font-semibold">{project.title}</h3>
-
                 <div className="mb-6 space-y-6">
                   <div>
                     <p className="mb-1 text-sm uppercase tracking-[0.2em] text-secondary">
@@ -94,24 +93,21 @@ export default function PortfolioSection() {
                     </p>
                   </div>
                 </div>
-
                 <div className="mb-5 text-sm text-secondary">
                   {project.stack}
                 </div>
-
                 <p className="text-sm text-secondary">{project.secondary}</p>
-
                 <a
                   href={`/portfolio-site/projects/${project.slug}`}
-                  className="mt-6 inline-flex text-sm text-[var(--accent)] transition hover:text-blue-300"
+                  className="mt-6 inline-flex text-sm text-[var(--accent)] transition hover:text-[var(--accent-hover)]"
                 >
                   Смотреть case study →
                 </a>
-              </article>
+              </Card>
             </FadeIn>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

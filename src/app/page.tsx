@@ -1,6 +1,9 @@
 import Link from "next/link";
 import HeroTitle from "@/components/motion/hero-title";
 import FadeIn from "@/components/motion/fade-in";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
+import Button from "@/components/ui/button";
 import ServicesSection from "@/components/sections/services-section";
 import PortfolioSection from "@/components/sections/portfolio-section";
 import ContactSection from "@/components/sections/contact-section";
@@ -9,16 +12,12 @@ import CTASection from "@/components/sections/cta-section";
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative z-10 overflow-hidden py-24 md:py-32">
-        {/* Градиент hero теперь будет поверх глобальной сетки, 
-            но под контентом. Оставляем как есть, он добавляет 
-            локальный акцент */}
+      <Section>
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_60%)]" />
-        <div className="container-custom">
+        <Container>
           <div className="max-w-4xl">
             <FadeIn>
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-blue-400">
+              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
                 Melkorp
               </p>
             </FadeIn>
@@ -31,7 +30,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="mb-3 text-base md:text-lg leading-8 text-zinc-300">
+              <p className="mb-3 text-base md:text-lg leading-8 text-primary">
                 Создание адаптивных сайтов, frontend-проектов и
                 SEO-структурированных интерфейсов с упором на
                 производительность, индексацию и техническую оптимизацию.
@@ -39,7 +38,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <p className="text-sm text-zinc-500 mb-10">
+              <p className="text-sm text-secondary mb-10">
                 SEO-focused frontend development, responsive architecture and
                 technical optimization.
               </p>
@@ -47,24 +46,18 @@ export default function Home() {
 
             <FadeIn delay={0.4}>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="#portfolio"
-                  className="rounded-xl bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:bg-blue-400 active:scale-[0.98]"
-                >
-                  Портфолио
-                </Link>
-
+                <Button href="#portfolio">Портфолио</Button>
                 <Link
                   href="#contacts"
-                  className="rounded-xl border border-zinc-700 px-6 py-3 text-sm font-medium transition-all duration-200 hover:scale-[1.02] hover:border-zinc-500 active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-2xl border border-surface px-6 py-4 font-medium text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Контакты
                 </Link>
               </div>
             </FadeIn>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <ServicesSection />
       <PortfolioSection />
