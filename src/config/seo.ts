@@ -1,7 +1,7 @@
 export const seoConfig = {
   siteName: "Melkorp",
 
-  siteUrl: "https://melkorp.github.io",
+  siteUrl: "https://melkorp.github.io/portfolio-site",
 
   description:
     "Frontend developer focused on SEO-oriented architecture, scalable UI systems and modern web platforms.",
