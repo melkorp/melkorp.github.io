@@ -56,6 +56,7 @@ export default function Home() {
                 >
                   Контакты
                 </Link>
+                <Button href="mailto:tamogoghi@gmail.com">Связаться</Button>
               </div>
             </FadeIn>
           </div>

@@ -38,10 +38,10 @@ export default function Footer() {
           </h3>
           <div className="mt-5 space-y-4">
             <a
-              href="mailto:melkorp@proton.me"
+              href="mailto:tamogoghi@gmail.com"
               className="block text-secondary transition-colors hover:text-white"
             >
-              melkorp@proton.me
+              tamogoghi@gmail.com
             </a>
             <a
               href="https://github.com/melkorp"

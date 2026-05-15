@@ -99,7 +99,7 @@ export default function PortfolioSection() {
                 <p className="text-sm text-secondary">{project.secondary}</p>
                 <a
                   href={`/portfolio-site/projects/${project.slug}`}
-                  className="mt-6 inline-flex text-sm text-[var(--accent)] transition hover:text-[var(--accent-hover)]"
+                  className="mt-6 inline-flex text-sm text-blue-400 transition hover:text-blue-200 hover:underline"
                 >
                   Смотреть case study →
                 </a>

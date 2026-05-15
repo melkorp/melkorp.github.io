@@ -22,7 +22,7 @@ export default function CTASection() {
                 Open for frontend development, SEO-oriented websites and modern
                 web interfaces.
               </p>
-              <Button href="#contacts">Обсудить проект</Button>
+              <Button href="mailto:tamogoghi@gmail.com">Обсудить проект</Button>
             </div>
           </div>
         </Container>
