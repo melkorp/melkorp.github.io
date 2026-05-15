@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://melkorp.github.io/portfolio-site/sitemap.xml
+Sitemap: https://melkorp.github.io/sitemap.xml
