@@ -14,19 +14,19 @@ export const metadata: Metadata = {
     google: "9guNaiNc7jeb4jdK2Oki0J59B5Yqc5CC2F15flhxgLM",
     yandex: "b87e2b2622c5d4d0",
   },
-  metadataBase: new URL("https://melkorp.github.io/portfolio-site"),
+  metadataBase: new URL("https://melkorp.github.io"),
   icons: {
-    icon: "/portfolio-site/images/icon.png",
+    icon: "/images/icon.png",
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://melkorp.github.io/portfolio-site",
+    canonical: "https://melkorp.github.io",
     languages: {
-      "ru-RU": "https://melkorp.github.io/portfolio-site",
-      "en-US": "https://melkorp.github.io/portfolio-site",
+      "ru-RU": "https://melkorp.github.io",
+      "en-US": "https://melkorp.github.io",
     },
   },
 };

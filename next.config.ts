@@ -63,10 +63,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
-  basePath: isProd ? "/portfolio-site" : "",
-
-  assetPrefix: isProd ? "/portfolio-site/" : "",
 };
 
 export default withBundleAnalyzer(withMDX(nextConfig));

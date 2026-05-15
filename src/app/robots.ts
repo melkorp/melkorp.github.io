@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://melkorp.github.io/portfolio-site/sitemap.xml",
+    sitemap: "https://melkorp.github.io/sitemap.xml",
   };
 }
