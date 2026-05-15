@@ -1,36 +1,20 @@
 "use client";
 
 import Link from "next/link";
-
 import { useState } from "react";
 
 const links = [
-  {
-    href: "/",
-    label: "Главная",
-  },
-
-  {
-    href: "#services",
-    label: "Услуги",
-  },
-
-  {
-    href: "#portfolio",
-    label: "Портфолио",
-  },
-
-  {
-    href: "#contacts",
-    label: "Контакты",
-  },
+  { href: "/", label: "Главная" },
+  { href: "#services", label: "Услуги" },
+  { href: "#portfolio", label: "Портфолио" },
+  { href: "#contacts", label: "Контакты" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-xl shadow-lg shadow-black/50">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-lg font-bold tracking-wide">

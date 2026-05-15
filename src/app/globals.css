@@ -359,23 +359,6 @@ section.py-24 {
   transform: translateY(-0.25rem);
 }
 
-/* Header */
-.sticky {
-  position: sticky;
-}
-
-.top-0 {
-  top: 0;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
 .border-b {
   border-bottom-width: 1px;
   border-bottom-style: solid;

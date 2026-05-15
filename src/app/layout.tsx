@@ -45,11 +45,8 @@ export default function RootLayout({
     >
       <body className="text-[var(--text-primary)]">
         <div className="relative min-h-screen overflow-hidden bg-[var(--background)] antialiased">
-          {/* Grid overlay */}
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.06]" />
-          {/* Radial glow */}
           <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-          {/* Noise texture (CSS) */}
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-soft-light"
             style={{
@@ -73,9 +70,7 @@ export default function RootLayout({
           />
 
           <Navbar />
-
           <main>{children}</main>
-
           <Footer />
         </div>
       </body>
