@@ -25,7 +25,7 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group rounded-2xl border border-surface bg-surface p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-zinc-500 shadow-[var(--shadow-soft)]"
+              className="group rounded-2xl border border-surface bg-surface p-8 backdrop-blur-xl transition-all duration-300 hover:translate-y-1 hover:border-zinc-500 shadow-[var(--shadow-soft)]"
             >
               <h2 className="text-2xl font-bold text-primary">{post.title}</h2>
               <p className="mt-4 text-secondary">{post.description}</p>

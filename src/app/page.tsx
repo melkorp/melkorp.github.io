@@ -26,7 +26,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl">
+              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl break-words hyphens-auto">
                 Разработка SEO-ориентированных сайтов с современной
                 frontend-архитектурой и высокой производительностью.
               </HeroTitle>
