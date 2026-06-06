@@ -3,15 +3,16 @@ import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import Heading from "@/components/ui/heading";
 import ProtectedEmail from "@/components/protected-email";
+import { encryptEmail } from "@/lib/encrypt-email";
 
 export default function ContactSection() {
   return (
     <FadeIn>
       <Section id="contacts">
         <Container>
-          <div className="rounded-3xl border border-surface bg-surface backdrop-blur-xl p-10 md:p-16 shadow-[var(--shadow-soft)]">
+          <div className="rounded-3xl border border-surface bg-surface backdrop-blur-xl p-10 md:p-16 shadow-(--shadow-soft)">
             <div className="max-w-3xl">
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
+              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-(--accent)">
                 Contacts
               </p>
               <Heading
@@ -29,7 +30,8 @@ export default function ContactSection() {
                     Email
                   </p>
                   <ProtectedEmail
-                    className="text-lg transition hover:text-[var(--accent-hover)]"
+                    encryptedEmail={encryptEmail("tamogoghi@gmail.com")}
+                    className="text-lg transition hover:text-(--accent-hover)"
                     label="Показать email"
                     revealLabel="Показать адрес для связи"
                   />
@@ -42,7 +44,7 @@ export default function ContactSection() {
                     href="https://github.com/melkorp"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg transition hover:text-[var(--accent-hover)]"
+                    className="text-lg transition hover:text-(--accent-hover)"
                   >
                     github.com/melkorp
                   </a>

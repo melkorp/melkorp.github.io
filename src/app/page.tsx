@@ -10,6 +10,7 @@ import ContactSection from "@/components/sections/contact-section";
 import CTASection from "@/components/sections/cta-section";
 import { createMetadata } from "@/lib/metadata";
 import ProtectedEmail from "@/components/protected-email";
+import { encryptEmail } from "@/lib/encrypt-email";
 
 export const metadata = createMetadata({ title: "Главная" });
 
@@ -21,13 +22,13 @@ export default function Home() {
         <Container>
           <div className="max-w-4xl">
             <FadeIn>
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
+              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-(--accent)">
                 Melkorp
               </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl break-words hyphens-auto">
+              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl wrap-break-word hyphens-auto">
                 Разработка SEO-ориентированных сайтов с современной
                 frontend-архитектурой и высокой производительностью.
               </HeroTitle>
@@ -58,7 +59,8 @@ export default function Home() {
                   Контакты
                 </Link>
                 <ProtectedEmail
-                  className="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-4 font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-[0.98]"
+                  encryptedEmail={encryptEmail("tamogoghi@gmail.com")}
+                  className="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-4 font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-(--accent-glow) active:scale-[0.98]"
                   label="Связаться"
                   revealLabel="Показать email для связи"
                 />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ProtectedEmail from "@/components/protected-email";
+import { encryptEmail } from "@/lib/encrypt-email";
 
 export default function Footer() {
   return (
@@ -39,8 +40,9 @@ export default function Footer() {
           </h3>
           <div className="mt-5 space-y-4">
             <ProtectedEmail
+              encryptedEmail={encryptEmail("tamogoghi@gmail.com")}
               className="block text-secondary transition-colors hover:text-white"
-              label="Email"
+              label="Написать"
               revealLabel="Показать email"
             />
             <a
