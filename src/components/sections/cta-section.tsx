@@ -2,7 +2,7 @@ import FadeIn from "@/components/motion/fade-in";
 import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import Heading from "@/components/ui/heading";
-import Button from "@/components/ui/button";
+import ProtectedEmail from "@/components/protected-email";
 
 export default function CTASection() {
   return (
@@ -22,7 +22,11 @@ export default function CTASection() {
                 Open for frontend development, SEO-oriented websites and modern
                 web interfaces.
               </p>
-              <Button href="mailto:tamogoghi@gmail.com">Обсудить проект</Button>
+              <ProtectedEmail
+                className="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-4 font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-[0.98]"
+                label="Обсудить проект"
+                revealLabel="Показать адрес для обсуждения проекта"
+              />
             </div>
           </div>
         </Container>

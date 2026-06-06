@@ -9,6 +9,7 @@ import PortfolioSection from "@/components/sections/portfolio-section";
 import ContactSection from "@/components/sections/contact-section";
 import CTASection from "@/components/sections/cta-section";
 import { createMetadata } from "@/lib/metadata";
+import ProtectedEmail from "@/components/protected-email";
 
 export const metadata = createMetadata({ title: "Главная" });
 
@@ -56,7 +57,11 @@ export default function Home() {
                 >
                   Контакты
                 </Link>
-                <Button href="mailto:tamogoghi@gmail.com">Связаться</Button>
+                <ProtectedEmail
+                  className="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-4 font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-[0.98]"
+                  label="Связаться"
+                  revealLabel="Показать email для связи"
+                />
               </div>
             </FadeIn>
           </div>

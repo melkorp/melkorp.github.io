@@ -2,6 +2,7 @@ import FadeIn from "@/components/motion/fade-in";
 import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import Heading from "@/components/ui/heading";
+import ProtectedEmail from "@/components/protected-email";
 
 export default function ContactSection() {
   return (
@@ -27,12 +28,11 @@ export default function ContactSection() {
                   <p className="mb-2 text-sm uppercase tracking-[0.2em] text-secondary">
                     Email
                   </p>
-                  <a
-                    href="mailto:tamogoghi@gmail.com"
+                  <ProtectedEmail
                     className="text-lg transition hover:text-[var(--accent-hover)]"
-                  >
-                    melkorp@proton.me
-                  </a>
+                    label="Показать email"
+                    revealLabel="Показать адрес для связи"
+                  />
                 </div>
                 <div>
                   <p className="mb-2 text-sm uppercase tracking-[0.2em] text-secondary">

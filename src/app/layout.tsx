@@ -4,16 +4,19 @@ import type { Metadata } from "next";
 import { personSchema, websiteSchema } from "@/lib/structured-data";
 import { Inter } from "next/font/google";
 import { createMetadata } from "@/lib/metadata";
+import { safeJsonLd } from "@/lib/safe-json-ld";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const verification = {
+  google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+};
+
 export const metadata: Metadata = {
   ...createMetadata({ title: "Melkorp" }),
-  verification: {
-    google: "9guNaiNc7jeb4jdK2Oki0J59B5Yqc5CC2F15flhxgLM",
-    yandex: "b87e2b2622c5d4d0",
-  },
+  verification,
   metadataBase: new URL("https://melkorp.github.io"),
   icons: {
     icon: "/images/icon.png",
@@ -43,6 +46,12 @@ export default function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
+      <head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+        />
+      </head>
       <body className="text-[var(--text-primary)]">
         <div className="relative min-h-screen overflow-hidden bg-[var(--background)] antialiased">
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.06]" />
@@ -59,13 +68,13 @@ export default function RootLayout({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(personSchema()),
+              __html: safeJsonLd(personSchema()),
             }}
           />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(websiteSchema()),
+              __html: safeJsonLd(websiteSchema()),
             }}
           />
 

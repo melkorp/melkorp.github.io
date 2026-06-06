@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProtectedEmail from "@/components/protected-email";
 
 export default function Footer() {
   return (
@@ -37,12 +38,11 @@ export default function Footer() {
             Контакты
           </h3>
           <div className="mt-5 space-y-4">
-            <a
-              href="mailto:tamogoghi@gmail.com"
+            <ProtectedEmail
               className="block text-secondary transition-colors hover:text-white"
-            >
-              tamogoghi@gmail.com
-            </a>
+              label="Email"
+              revealLabel="Показать email"
+            />
             <a
               href="https://github.com/melkorp"
               target="_blank"

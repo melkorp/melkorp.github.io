@@ -4,6 +4,7 @@ import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import { projects } from "@/data/projects";
 import { createMetadata } from "@/lib/metadata";
+import { safeJsonLd } from "@/lib/safe-json-ld";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -50,7 +51,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(projectSchema),
+          __html: safeJsonLd(projectSchema),
         }}
       />
       <Section>

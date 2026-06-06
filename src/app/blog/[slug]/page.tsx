@@ -5,6 +5,7 @@ import { posts } from "@/data/blog";
 import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import { createMetadata } from "@/lib/metadata";
+import { safeJsonLd } from "@/lib/safe-json-ld";
 
 const postModules = {
   "seo-frontend": SEOFrontend,
@@ -61,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleSchema),
+          __html: safeJsonLd(articleSchema),
         }}
       />
       <Section>
