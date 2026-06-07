@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { createMetadata } from "@/lib/metadata";
 import { safeJsonLd } from "@/lib/safe-json-ld";
 import "./globals.css";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,6 +83,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </div>
+        <ScrollToTop />
       </body>
     </html>
   );

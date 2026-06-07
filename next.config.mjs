@@ -1,6 +1,6 @@
-import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 import bundleAnalyzer from "@next/bundle-analyzer";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -11,7 +11,7 @@ const withMDX = createMDX({
   options: {
     rehypePlugins: [
       [
-        "rehype-pretty-code",
+        rehypePrettyCode,
         {
           theme: "github-dark",
           keepBackground: false,
@@ -21,7 +21,8 @@ const withMDX = createMDX({
   },
 });
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   output: "export",
   trailingSlash: true,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
