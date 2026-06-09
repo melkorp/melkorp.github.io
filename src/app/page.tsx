@@ -28,24 +28,21 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl wrap-break-word hyphens-auto">
-                Разработка SEO-ориентированных сайтов с современной
-                frontend-архитектурой и высокой производительностью.
+              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl break-words hyphens-auto">
+                Создаю быстрые сайты, которые любят поисковики
               </HeroTitle>
             </FadeIn>
 
             <FadeIn delay={0.2}>
               <p className="mb-3 text-base md:text-lg leading-8 text-primary">
-                Создание адаптивных сайтов, frontend-проектов и
-                SEO-структурированных интерфейсов с упором на
-                производительность, индексацию и техническую оптимизацию.
+                Проектирую адаптивные интерфейсы с чистой архитектурой, высокой
+                скоростью загрузки и продуманной SEO-структурой.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.3}>
               <p className="text-sm text-secondary mb-10">
-                SEO-focused frontend development, responsive architecture and
-                technical optimization.
+                Modern frontend, clean architecture, SEO that actually works.
               </p>
             </FadeIn>
 

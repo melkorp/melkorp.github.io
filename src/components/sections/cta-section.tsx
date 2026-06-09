@@ -16,12 +16,12 @@ export default function CTASection() {
                 Collaboration
               </p>
               <Heading
-                title="Разработка современных SEO-ориентированных сайтов и frontend-проектов"
-                description="Открыт для сотрудничества, frontend-разработки и создания производительных web-интерфейсов."
+                title="Готовы обсудить проект?"
+                description="Ищу интересные задачи — от лендингов до сложных frontend-систем. Пишите, разберём идею бесплатно."
               />
               <p className="text-sm text-secondary mb-10">
-                Open for frontend development, SEO-oriented websites and modern
-                web interfaces.
+                Open for collaboration — let&apos;s build something fast and
+                SEO-friendly.
               </p>
               <ProtectedEmail
                 encryptedEmail={encryptEmail("tamogoghi@gmail.com")}

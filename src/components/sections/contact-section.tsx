@@ -16,11 +16,11 @@ export default function ContactSection() {
                 Contacts
               </p>
               <Heading
-                title="Связь для сотрудничества и frontend-разработки"
-                description="Разработка SEO-ориентированных сайтов, адаптивных интерфейсов и современных frontend-проектов."
+                title="Напишите мне"
+                description="Есть задача, вопрос или идея? Я открыт к сотрудничеству — выходите на связь удобным способом."
               />
               <p className="text-sm text-secondary mb-10">
-                Open for collaboration, frontend projects and SEO-oriented web
+                Available for frontend projects, SEO consulting and web
                 development.
               </p>
 

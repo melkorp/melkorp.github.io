@@ -6,28 +6,28 @@ import Card from "@/components/ui/card";
 
 const services = [
   {
-    title: "SEO-ориентированные сайты",
+    title: "SEO-оптимизация",
     description:
-      "Разработка сайтов с корректной HTML-структурой, технической SEO-подготовкой и высокой скоростью загрузки.",
-    secondary: "SEO-first website architecture and technical optimization.",
+      "Технический аудит, корректная HTML-семантика, микроразметка и ускорение индексации — чтобы сайт находили.",
+    secondary: "Technical SEO, structured data and crawl optimization.",
   },
   {
-    title: "Frontend разработка",
+    title: "Frontend-архитектура",
     description:
-      "Создание современных интерфейсов на Next.js, TypeScript и Tailwind CSS.",
-    secondary: "Modern frontend interfaces with scalable architecture.",
+      "Проектирование компонентных систем на Next.js, TypeScript и Tailwind — чистый код, который легко масштабировать.",
+    secondary: "Scalable frontend architecture with modern stack.",
   },
   {
-    title: "Адаптивный дизайн",
+    title: "Адаптивная вёрстка",
     description:
-      "Интерфейсы корректно работают на мобильных устройствах, планшетах и desktop.",
-    secondary: "Responsive layouts across all screen sizes.",
+      "Интерфейсы, которые одинаково удобны на смартфоне, планшете и десктопе — без компромиссов.",
+    secondary: "Pixel-perfect responsive layouts for all devices.",
   },
   {
-    title: "Performance optimization",
+    title: "Производительность",
     description:
-      "Оптимизация Lighthouse-показателей, Core Web Vitals и скорости рендеринга.",
-    secondary: "Fast loading and optimized rendering pipeline.",
+      "Оптимизация Core Web Vitals, Lighthouse и времени загрузки — быстрый рендеринг на любых устройствах.",
+    secondary: "Performance tuning for 90+ Lighthouse scores.",
   },
 ];
 
@@ -41,8 +41,8 @@ export default function ServicesSection() {
               Services
             </p>
             <Heading
-              title="Разработка современных SEO-ориентированных сайтов"
-              description="Архитектура, frontend-разработка, техническая SEO-оптимизация и адаптивный интерфейс."
+              title="Что я делаю"
+              description="От архитектуры до производительности — создаю сайты, которые работают быстро и ранжируются высоко."
             />
           </div>
         </FadeIn>
