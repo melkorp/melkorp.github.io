@@ -10,7 +10,7 @@ export default function ContactSection() {
     <FadeIn>
       <Section id="contacts">
         <Container>
-          <div className="rounded-3xl border border-surface bg-surface backdrop-blur-xl p-10 md:p-16 shadow-(--shadow-soft)">
+          <div className="rounded-3xl border border-surface bg-surface md:backdrop-blur-xl p-10 md:p-16 shadow-(--shadow-soft) overflow-hidden">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm uppercase tracking-[0.3em] text-(--accent)">
                 Contacts
