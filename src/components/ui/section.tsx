@@ -5,7 +5,7 @@ type Props = {
 
 export default function Section({ children, id }: Props) {
   return (
-    <section id={id} className="relative z-10 py-24 md:py-32">
+    <section id={id} className="relative z-10 py-24 md:py-32 bg-background">
       {children}
     </section>
   );

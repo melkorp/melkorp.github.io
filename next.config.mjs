@@ -1,10 +1,5 @@
 import createMDX from "@next/mdx";
-import bundleAnalyzer from "@next/bundle-analyzer";
 import rehypePrettyCode from "rehype-pretty-code";
-
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -21,7 +16,7 @@ const withMDX = createMDX({
   },
 });
 
-/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
   trailingSlash: true,
@@ -31,4 +26,4 @@ const nextConfig = {
   },
 };
 
-export default withBundleAnalyzer(withMDX(nextConfig));
+export default withMDX(nextConfig);

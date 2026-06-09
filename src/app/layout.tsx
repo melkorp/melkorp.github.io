@@ -53,18 +53,9 @@ export default function RootLayout({
           content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
         />
       </head>
-      <body className="text-(--text-primary)">
-        <div className="relative min-h-screen overflow-hidden bg-(--background) antialiased">
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-size-[64px_64px] opacity-[0.06]" />
-          <div className="pointer-events-none absolute left-1/2 top-0 h-150 w-150 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-soft-light"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
-              backgroundRepeat: "repeat",
-              backgroundSize: "200px 200px",
-            }}
-          />
+      <body className="antialiased">
+        <div className="relative min-h-screen overflow-hidden bg-background dark:bg-foreground transition-colors duration-300">
+          {/* Декоративные элементы — временно убраны, добавим позже при необходимости */}
 
           <script
             type="application/ld+json"
