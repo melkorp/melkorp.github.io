@@ -28,7 +28,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl break-words hyphens-auto">
+              <HeroTitle className="mb-6 text-5xl font-black tracking-tight leading-[0.95] md:text-7xl wrap-break-word hyphens-auto">
                 Создаю быстрые сайты, которые любят поисковики
               </HeroTitle>
             </FadeIn>

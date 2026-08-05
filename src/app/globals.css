@@ -48,6 +48,14 @@
   }
 }
 
+/* Aliases для совместимости с компонентами, которые используют короткие имена переменных */
+:root {
+  --background: var(--color-background, #0f172a);
+  --foreground: var(--color-foreground, #ffffff);
+  --border: var(--surface-border, rgba(255, 255, 255, 0.08));
+  --accent: var(--color-primary, #3b82f6);
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -105,7 +113,11 @@ h4,
 h5,
 h6,
 p {
-  overflow-wrap: break-word;
   word-wrap: break-word;
-  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Отступ для якорей, чтобы они не перекрывались sticky header */
+[id] {
+  scroll-margin-top: 4rem;
 }

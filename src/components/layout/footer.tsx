@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Github } from "lucide-react";
 import ProtectedEmail from "@/components/protected-email";
 import { encryptEmail } from "@/lib/encrypt-email";
 
@@ -56,7 +55,17 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors"
             >
-              <Github size={16} />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.95 3.2 9.14 7.64 10.62.56.1.76-.24.76-.54 0-.27-.01-1-.02-1.96-3.11.68-3.77-1.5-3.77-1.5-.51-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.16 1.71 1.16.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.71-1.49-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.43-2.21 1.14-2.99-.12-.28-.5-1.4.11-2.92 0 0 .94-.3 3.08 1.14.89-.25 1.85-.37 2.8-.37.95 0 1.91.12 2.8.37 2.14-1.44 3.08-1.14 3.08-1.14.61 1.52.23 2.64.11 2.92.71.78 1.14 1.77 1.14 2.99 0 4.29-2.61 5.24-5.1 5.52.4.34.76 1.02.76 2.06 0 1.49-.01 2.69-.01 3.05 0 .3.2.65.77.54C19.05 20.89 22.25 16.7 22.25 11.75 22.25 5.48 17.27.5 12 .5z" />
+              </svg>
               GitHub →
             </a>
           </div>

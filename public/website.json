@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Melkorp",
+  "url": "https://melkorp.github.io",
+  "description": "Frontend developer focused on SEO-oriented architecture, scalable UI systems and modern web platforms."
+}

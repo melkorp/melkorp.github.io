@@ -1,10 +1,8 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
-import { personSchema, websiteSchema } from "@/lib/structured-data";
 import { Inter } from "next/font/google";
 import { createMetadata } from "@/lib/metadata";
-import { safeJsonLd } from "@/lib/safe-json-ld";
 import "./globals.css";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 
@@ -50,25 +48,17 @@ export default function RootLayout({
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+          content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self';"
         />
+        {/* JSON-LD вынесены в публичные файлы, чтобы работать с CSP без unsafe-inline для стилей */}
+        <script type="application/ld+json" src="/person.json" />
+        <script type="application/ld+json" src="/website.json" />
       </head>
       <body className="antialiased">
         <div className="relative min-h-screen overflow-hidden bg-background dark:bg-foreground transition-colors duration-300">
           {/* Декоративные элементы — временно убраны, добавим позже при необходимости */}
 
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: safeJsonLd(personSchema()),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: safeJsonLd(websiteSchema()),
-            }}
-          />
+          {/* JSON-LD скрипты подключаются через <head> с внешними файлами */}
 
           <Navbar />
           <main>{children}</main>

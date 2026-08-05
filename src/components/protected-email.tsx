@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type ProtectedEmailProps = {
   readonly encryptedEmail: string;
@@ -8,30 +8,6 @@ type ProtectedEmailProps = {
   readonly label?: string;
   readonly revealLabel?: string;
 };
-
-// Функция для шифрования с использованием codePointAt
-function encryptEmail(email: string): string {
-  const key = 42;
-  let encrypted = "";
-  for (const char of email) {
-    const codePoint = char.codePointAt(0) ?? 0;
-    encrypted += String.fromCodePoint(codePoint ^ key);
-  }
-  return btoa(encrypted);
-}
-
-// Функция для дешифрования с использованием codePointAt
-function decryptEmail(encrypted: string): string {
-  const key = 42;
-  const decoded = atob(encrypted);
-  let decrypted = "";
-  for (const char of decoded) {
-    const codePoint = char.codePointAt(0) ?? 0;
-    decrypted += String.fromCodePoint(codePoint ^ key);
-  }
-  return decrypted;
-}
-
 export default function ProtectedEmail({
   encryptedEmail,
   className,
@@ -40,24 +16,21 @@ export default function ProtectedEmail({
 }: ProtectedEmailProps) {
   const [isRevealed, setIsRevealed] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [decryptedEmail, setDecryptedEmail] = useState<string | null>(null);
 
-  useEffect(() => {
-    setDecryptedEmail(decryptEmail(encryptedEmail));
-  }, [encryptedEmail]);
+  const email = atob(encryptedEmail).replace(/./g, (char) =>
+    String.fromCodePoint((char.codePointAt(0) ?? 0) ^ 42),
+  );
 
   const handleCopy = async () => {
-    if (decryptedEmail) {
-      await navigator.clipboard.writeText(decryptedEmail);
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-        setIsRevealed(false);
-      }, 2000);
-    }
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+      setIsRevealed(false);
+    }, 2000);
   };
 
-  if (isRevealed && decryptedEmail) {
+  if (isRevealed) {
     return (
       <div className={className}>
         <button
@@ -65,7 +38,7 @@ export default function ProtectedEmail({
           onClick={handleCopy}
           className="cursor-pointer hover:opacity-80 transition-opacity"
         >
-          {copied ? "Скопировано! ✓" : decryptedEmail}
+          {copied ? "Скопировано! ✓" : email}
         </button>
       </div>
     );
