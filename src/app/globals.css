@@ -48,6 +48,12 @@
   }
 }
 
+.animate-fade-up {
+  opacity: 0;
+  animation: var(--animate-fade-up);
+  animation-fill-mode: forwards;
+}
+
 /* Aliases для совместимости с компонентами, которые используют короткие имена переменных */
 :root {
   --background: var(--color-background, #0f172a);
