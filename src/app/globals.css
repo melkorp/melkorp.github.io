@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  /* Цветовая палитра — сразу тёмная тема */
+  --color-background: #0f172a;
+  --color-foreground: #ffffff;
+  --color-surface: #1e293b;
+  --color-surface-light: #334155;
+
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-primary-glow: rgba(59, 130, 246, 0.15);
+
+  /* Типографика */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-3xl: 1.875rem;
+  --text-5xl: 3rem;
+
+  /* Отступы */
+  --spacing-section: 6rem;
+  --spacing-card: 2rem;
+
+  /* Анимации */
+  --animate-fade-up: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Aliases для совместимости с компонентами, которые используют короткие имена переменных */
+:root {
+  --background: var(--color-background, #0f172a);
+  --foreground: var(--color-foreground, #ffffff);
+  --border: var(--surface-border, rgba(255, 255, 255, 0.08));
+  --accent: var(--color-primary, #3b82f6);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition-property: color, background-color;
+  transition-duration: 300ms;
+}
+
+/* Стеклянный эффект */
+.glass {
+  background-color: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Прочие утилиты */
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+/* Исправление для мобильных устройств */
+@media (max-width: 767px) {
+  .glass,
+  .backdrop-blur-xl,
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
+}
+
+/* Фикс для iOS Safari — предотвращает "туман" */
+@supports (-webkit-touch-callout: none) {
+  .backdrop-blur-xl {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+/* Принудительный перенос длинных слов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Отступ для якорей, чтобы они не перекрывались sticky header */
+[id] {
+  scroll-margin-top: 4rem;
+}
