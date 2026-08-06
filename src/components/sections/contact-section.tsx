@@ -10,6 +10,24 @@ import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactSection() {
   const [state, handleSubmit] = useForm("mzepbdqn");
+  const hasFormErrors = Boolean(
+    state.errors &&
+    typeof state.errors === "object" &&
+    Object.keys(state.errors).length > 0,
+  );
+  const errorMessages =
+    state.errors && typeof state.errors === "object"
+      ? Object.entries(state.errors).map(([field, error]) => {
+          const message =
+            typeof error === "string"
+              ? error
+              : Array.isArray(error)
+                ? error.join(", ")
+                : "Ошибка отправки";
+
+          return `${field}: ${message}`;
+        })
+      : [];
 
   if (state.succeeded) {
     return (
@@ -55,6 +73,23 @@ export default function ContactSection() {
               <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
                 <div>
                   <form onSubmit={handleSubmit} className="grid gap-4">
+                    {hasFormErrors ? (
+                      <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
+                        <p className="font-medium">
+                          Не удалось отправить сообщение.
+                        </p>
+                        <ul className="mt-2 list-disc space-y-1 pl-5">
+                          {errorMessages.map((message, index) => (
+                            <li key={`${message}-${index}`}>{message}</li>
+                          ))}
+                        </ul>
+                        <p className="mt-2">
+                          Проверьте поля формы или напишите напрямую по email
+                          ниже.
+                        </p>
+                      </div>
+                    ) : null}
+
                     <label className="block text-sm font-medium text-secondary">
                       Имя
                       <input
@@ -116,6 +151,20 @@ export default function ContactSection() {
                     >
                       {state.submitting ? "Отправка..." : "Отправить сообщение"}
                     </button>
+
+                    {hasFormErrors ? (
+                      <div className="rounded-xl border border-surface bg-background/50 p-4 text-sm text-secondary">
+                        <p className="mb-2 font-medium text-white">
+                          Если форма не работает, напишите напрямую:
+                        </p>
+                        <ProtectedEmail
+                          encryptedEmail={encryptEmail("tamogoghi@gmail.com")}
+                          className="transition hover:text-(--accent-hover)"
+                          label="Показать email"
+                          revealLabel="Показать адрес для связи"
+                        />
+                      </div>
+                    ) : null}
                   </form>
                 </div>
 

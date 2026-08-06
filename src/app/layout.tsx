@@ -48,7 +48,7 @@ export default function RootLayout({
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self';"
+          content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-hashes'; connect-src 'self' https://formspree.io https://*.formspree.io; form-action 'self' https://formspree.io https://*.formspree.io;"
         />
         {/* JSON-LD вынесены в публичные файлы, чтобы работать с CSP без unsafe-inline для стилей */}
         <script type="application/ld+json" src="/person.json" />
