@@ -1,12 +1,9 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { createMetadata } from "@/lib/metadata";
 import "./globals.css";
 import ScrollToTop from "@/components/ui/scroll-to-top";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const verification = {
   google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
@@ -39,12 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={inter.className}
-      suppressHydrationWarning
-      data-scroll-behavior="smooth"
-    >
+    <html lang="ru" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
