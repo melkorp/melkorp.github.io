@@ -48,14 +48,7 @@ export default function RootLayout({
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="
-            default-src 'self';
-            img-src 'self' data: blob:;
-            script-src 'self';
-            style-src 'self' 'unsafe-hashes' sha256-PWEsJbDDdbIMebZDI9YWizXqPKxk4tOslYmWk2nJ+QE= sha256-8Z+NIkNTY9PA6IZWyla86zLScyPYu+DMCE0SOb56Xx8= sha256-loarVluNUQVbM7rhQ8Hq9m282hh+HPYxAVebTfBOTHE= sha256-+Sz7UVbGpHDb3n1JfZ44f1Kf3VLPIWNPMnKoc0Ne9wk= sha256-32mYGAQxBjRbIqEhE8i3momV3VlKU/I11QWNCRHvsw8= sha256-/hsS7oXTDPMp6bXDYcvYv143BPifqzm6v132HBsS0A0=;
-            connect-src 'self' https://formspree.io https://*.formspree.io;
-            form-action 'self' https://formspree.io https://*.formspree.io;
-          "
+          content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-hashes'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://*.formspree.io https://fonts.googleapis.com https://fonts.gstatic.com; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'; object-src 'none';"
         />
         {/* JSON-LD вынесены в публичные файлы, чтобы работать с CSP без unsafe-inline для стилей */}
         <script type="application/ld+json" src="/person.json" />

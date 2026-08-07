@@ -54,6 +54,26 @@
   animation-fill-mode: forwards;
 }
 
+.animate-fade-up.motion-delay-0 {
+  animation-delay: 0s;
+}
+
+.animate-fade-up.motion-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-fade-up.motion-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-fade-up.motion-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.animate-fade-up.motion-delay-4 {
+  animation-delay: 0.4s;
+}
+
 /* Aliases для совместимости с компонентами, которые используют короткие имена переменных */
 :root {
   --background: var(--color-background, #0f172a);
