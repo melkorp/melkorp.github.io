@@ -42,9 +42,41 @@ export default function RootLayout({
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-hashes'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://*.formspree.io https://fonts.googleapis.com https://fonts.gstatic.com; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'; object-src 'none';"
         />
-        {/* JSON-LD вынесены в публичные файлы, чтобы работать с CSP без unsafe-inline для стилей */}
-        <script type="application/ld+json" src="/person.json" />
-        <script type="application/ld+json" src="/website.json" />
+        {/* JSON-LD вынесены inline, чтобы гарантированно работать в статическом export и не ломать рендер */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Melkorp",
+              url: "https://melkorp.github.io",
+              jobTitle: "Frontend Developer",
+              description:
+                "Frontend developer focused on SEO-oriented architecture, scalable UI systems and modern web platforms.",
+              knowsAbout: [
+                "Next.js",
+                "TypeScript",
+                "SEO",
+                "React",
+                "Frontend Architecture",
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Melkorp",
+              url: "https://melkorp.github.io",
+              description:
+                "Frontend developer focused on SEO-oriented architecture, scalable UI systems and modern web platforms.",
+            }),
+          }}
+        />
       </head>
       <body className="antialiased">
         <div className="relative min-h-screen overflow-hidden bg-background dark:bg-foreground transition-colors duration-300">
